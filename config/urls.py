@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework_simplejwt.views import (TokenObtainPairView,
                                             TokenRefreshView)
+from apps.todos.views import TodoListCreateAPIView
 
 urlpatterns = [
     path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("api/todo/", TodoListCreateAPIView.as_view(), name="todo_list_create"),
     path("admin/", admin.site.urls),
 ]

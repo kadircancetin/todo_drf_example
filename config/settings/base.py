@@ -31,7 +31,10 @@ THIRTH_PARTY_APPS = [
     "rest_framework",
     "django_filters",
 ]
-LOCAL_APPS = ["apps.users"]
+LOCAL_APPS = [
+    "apps.users",
+    "apps.todos",
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRTH_PARTY_APPS + LOCAL_APPS
 
