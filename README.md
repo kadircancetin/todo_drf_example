@@ -7,6 +7,12 @@ Very basic django rest framework, todo example with docker.
 ```bash
 $ sh sh/development_up.sh
 ```
+or directly
+
+```bash
+$ docker-compose -f docker-compose-base.yml -f docker-compose-development.yml up --build -d;
+$ docker exec -ti todo_example bash;
+```
 
 It will build and start docker container and opens bash shell.
 
