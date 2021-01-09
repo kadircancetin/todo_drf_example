@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  django:
+    env_file:
+      - ./envs/base/django
+      - ./envs/development/django
+    command: sh /app/docker/development/django/start.sh
+    tty: true
+    ports:
+      - "8000:8000"

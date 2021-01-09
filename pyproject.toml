@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "todo_example"
+version = "0.1.0"
+description = "todo example"
+authors = ["Kadir Can Çetin <kadircancetin@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "3.8.3"
+Django = "^3.1.4"
+ipdb = "^0.13.4"
+django-extensions = "^3.1.0"
+djangorestframework = "^3.12.2"
+django-filter = "^2.4.0"
+djangorestframework-simplejwt = "^4.6.0"
+factory-boy = "^3.2.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.8.4"
+
+[tool.black]
+line-length = 120
+target-version = ['py37', 'py38']

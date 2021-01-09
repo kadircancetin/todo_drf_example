@@ -1,0 +1,8 @@
+# General
+# ------------------------------------------------------------------------------
+USE_DOCKER=yes
+IPYTHONDIR=/.ipython
+
+DJANGO_SECRET_KEY=ibCk2ZZiUkts51NnpXN3NYvx8N9lw8pxSbLSFCOmBG8G7fPuLX0J5xGkVtln8xEP
+
+DJANGO_SETTINGS_MODULE=config.settings.development

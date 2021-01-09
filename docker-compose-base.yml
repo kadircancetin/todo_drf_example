@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  django:
+    container_name: todo_example
+    build:
+      context: .
+      dockerfile: ./docker/base/django/Dockerfile
+    volumes:
+      - .:/app
