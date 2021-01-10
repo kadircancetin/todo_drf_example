@@ -4,8 +4,8 @@ from apps.todos.models import Todo
 
 
 class TodoFilter(django_filters.FilterSet):
-    title = django_filters.CharFilter(lookup_expr="iexact")
-    body = django_filters.CharFilter(lookup_expr="iexact")
+    title = django_filters.CharFilter(lookup_expr="contains")
+    body = django_filters.CharFilter(lookup_expr="contains")
 
     class Meta:
         model = Todo

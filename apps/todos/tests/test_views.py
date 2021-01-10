@@ -12,7 +12,7 @@ class TodoListCreateAPIViewTestCase(BaseViewTestCase):
         self.anonym_client = self.get_anonymous_client()
 
         # user todos
-        TodoFactory.create_batch(5, user=self.user)
+        TodoFactory.create_batch(5, user=self.user, title="test title")
 
         # not user todos
         TodoFactory.create_batch(3)
@@ -43,6 +43,16 @@ class TodoListCreateAPIViewTestCase(BaseViewTestCase):
         )
 
         self.assertEqual(response_todos, expected_todos)
+
+    def test_filter_on_list(self):
+        response = self.user_client.get(self.url, data={"title": "xix"*10})
+        self.assertEqual(len(response.data), 0)
+
+        response = self.user_client.get(self.url, data={"title": "test title"})
+        self.assertEqual(len(response.data), 5)
+
+        response = self.user_client.get(self.url, data={"title": "test"})
+        self.assertEqual(len(response.data), 5)
 
     def test_create_todo(self):
         response = self.user_client.post(self.url, data=self.example_data)
